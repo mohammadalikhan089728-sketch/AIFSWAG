@@ -1,0 +1,1364 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- GOOGLE SITE VERIFICATION TAG -->
+    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE_HERE" />
+    
+    <title>AIFSWAG | Premium Flipkart-Style Store</title>
+    <!-- Tailwind CSS for modern layout components -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for precise UI iconography matching -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fkBlue: '#1D54F2',
+                        fkYellow: '#FFE500',
+                        fkBg: '#F1F3F6',
+                        darkBg: '#08090c',
+                        darkCard: '#12131a',
+                        instagramPink: '#E1306C',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Responsive & Safe 3D Intro Animation */
+        #intro-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px;
+            overflow: hidden;
+        }
+
+        .brand-3d {
+            font-size: calc(2.2rem + 4vw); /* Safely scaled for all mobile device screens */
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 6px;
+            text-align: center;
+            max-width: 90vw; /* Keeps text fully inside screen bounds */
+            white-space: nowrap;
+            transform-style: preserve-3d;
+            animation: rotate3D 2.2s ease-in-out forwards;
+            text-shadow: 0 0 35px #1D54F2;
+        }
+
+        @keyframes rotate3D {
+            0% { transform: rotateY(-90deg) rotateX(-15deg) scale(0.4); opacity: 0; }
+            50% { transform: rotateY(360deg) rotateX(10deg) scale(1.05); opacity: 1; color: #FFE500; text-shadow: 0 0 55px #FFE500; }
+            100% { transform: rotateY(720deg) rotateX(0deg) scale(0.95); opacity: 1; }
+        }
+
+        /* Dangerous Pulse Instagram Glow */
+        .instagram-glow {
+            position: relative;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            box-shadow: 0 0 25px rgba(220, 39, 67, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.3);
+            animation: neonPulse 2s infinite alternate;
+        }
+
+        @keyframes neonPulse {
+            0% {
+                box-shadow: 0 0 15px rgba(220, 39, 67, 0.5), 0 0 30px rgba(220, 39, 67, 0.3);
+                transform: scale(1);
+            }
+            100% {
+                box-shadow: 0 0 25px rgba(220, 39, 67, 0.9), 0 0 50px rgba(220, 39, 67, 0.6);
+                transform: scale(1.04);
+            }
+        }
+
+        body {
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans min-h-screen pb-24">
+
+    <!-- 1. 3D INTRO SCREEN -->
+    <div id="intro-screen">
+        <div class="brand-3d">AIFSWAG</div>
+        <p class="text-white/50 text-xs tracking-[0.4em] mt-6 uppercase">Pioneering Premium Trends</p>
+    </div>
+
+    <!-- 2. WELCOME / BRAND STORY PAGE -->
+    <div id="welcome-view" class="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center p-6 text-center transition-all duration-700 overflow-y-auto" style="display: none; opacity: 0;">
+        <div class="max-w-md w-full space-y-8 bg-gradient-to-b from-neutral-900 to-black p-8 rounded-3xl border border-neutral-800 shadow-2xl">
+            <h1 class="text-5xl font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-fkYellow to-white">
+                AIFSWAG
+            </h1>
+            <p class="text-neutral-400 text-base leading-relaxed">
+                Elite Fashion Hub delivering supreme designs & highly curated fragrances directly to your hands.
+            </p>
+
+            <div class="space-y-4 pt-4">
+                <div class="flex items-center gap-4 bg-neutral-900/60 p-4 rounded-2xl border border-neutral-800 text-left">
+                    <div class="w-12 h-12 rounded-full bg-blue-100/10 flex items-center justify-center text-fkBlue text-xl">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold">Fast Delivery Channels</h4>
+                        <p class="text-xs text-neutral-400">Direct logistics active across all locations of Chapra.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 bg-neutral-900/60 p-4 rounded-2xl border border-neutral-800 text-left">
+                    <div class="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center text-yellow-500 text-xl">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold">Original Packages Only</h4>
+                        <p class="text-xs text-neutral-400">Intact factory seals keeping fabric and scent notes fresh.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="enterStore()" class="w-full mt-6 py-4 bg-fkBlue text-white rounded-full font-bold text-lg tracking-wider hover:bg-blue-600 transition-all active:scale-95 shadow-lg shadow-fkBlue/30 flex items-center justify-center gap-2">
+                CHECK PRODUCTS <i class="fa-solid fa-arrow-right-to-bracket"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- 3. FLIPKART STYLE MAIN VIEW -->
+    <div id="store-view" class="hidden max-w-md mx-auto bg-white min-h-screen relative shadow-2xl pb-24">
+        
+        <!-- HEADER ROW: FLIPKART STYLE BRAND TABS -->
+        <div class="grid grid-cols-2 gap-2 p-3 bg-white border-b border-gray-100">
+            <div onclick="filterCategory('all'); showSection('home');" class="bg-fkYellow text-black font-extrabold italic rounded-lg py-2.5 flex flex-col items-center justify-center gap-0.5 shadow-sm cursor-pointer border-b-2 border-fkBlue hover:brightness-95 transition-all">
+                <span class="text-[10px] tracking-widest uppercase not-italic font-bold text-gray-700">AIFSWAG</span>
+                <span class="text-sm font-black text-fkBlue flex items-center gap-1.5">
+                    <i class="fa-solid fa-bag-shopping text-xs"></i> Storefront
+                </span>
+            </div>
+            <div onclick="showSection('about')" class="bg-white text-gray-500 rounded-lg py-2.5 flex flex-col items-center justify-center gap-0.5 border border-gray-200 shadow-sm cursor-pointer hover:bg-gray-50 transition-all">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400">LOGISTICS</span>
+                <span class="text-sm font-bold text-red-500 flex items-center gap-1.5">
+                    <i class="fa-solid fa-plane text-xs"></i> Chapra Hub
+                </span>
+            </div>
+        </div>
+
+        <!-- LOCATION PIN STRIP -->
+        <div class="bg-blue-50/50 px-4 py-2 flex items-center justify-between text-[11px] text-gray-600 border-b border-gray-100">
+            <div class="flex items-center gap-1.5">
+                <i class="fa-solid fa-location-dot text-fkBlue text-sm animate-bounce"></i>
+                <span id="savedLocationText">Delivering to <strong class="text-gray-900">Chapra, Bihar</strong></span>
+            </div>
+            <button onclick="openLocationModal()" class="text-fkBlue font-bold flex items-center gap-1 hover:underline">
+                Select delivery location <i class="fa-solid fa-chevron-right text-[8px]"></i>
+            </button>
+        </div>
+
+        <!-- STICKY SEARCH & THEME BAR -->
+        <div class="p-3 bg-white sticky top-0 z-30 border-b border-gray-100 flex items-center gap-2">
+            <div class="relative flex-1">
+                <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-fkBlue text-lg"></i>
+                <input type="text" id="searchBar" oninput="handleSearch(this.value)" class="w-full pl-12 pr-28 py-3 border-2 border-fkBlue rounded-xl text-gray-800 focus:outline-none placeholder-gray-400 text-sm shadow-sm" placeholder="Search for Products">
+                
+                <!-- Auth / Theme Toggle inside search bar -->
+                <div class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-2">
+                    <button onclick="toggleDayNightMode()" class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-gray-200 transition-colors">
+                        <i id="theme-icon" class="fa-solid fa-moon"></i>
+                    </button>
+                    <!-- User Avatar Display Container -->
+                    <div id="user-avatar-container" class="flex items-center justify-center">
+                        <!-- Loaded Dynamically as Google Avatar or Login Pill -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DYNAMIC SECTIONS CONTAINER -->
+        <div id="section-home" class="section-block">
+            <!-- HORIZONTAL SCROLLING CATEGORY LIST -->
+            <div class="bg-white py-3 border-b border-gray-100">
+                <div class="flex overflow-x-auto no-scrollbar gap-5 px-4" id="categoryCapsules">
+                    <!-- Loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- DYNAMIC PROMOTIONAL ADV BANNER CAROUSEL -->
+            <div class="p-3 bg-gray-50">
+                <div class="relative rounded-2xl overflow-hidden shadow-md bg-gradient-to-r from-blue-700 via-indigo-800 to-indigo-950 text-white min-h-[165px] flex items-center p-6">
+                    <div id="banner-slider" class="w-full transition-opacity duration-500">
+                        <div class="space-y-1">
+                            <span class="bg-fkYellow text-black text-[9px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">SALE IS LIVE</span>
+                            <h3 class="text-xl font-black tracking-tight">Loading Catalog...</h3>
+                            <p class="text-xs text-blue-100 max-w-[70%] mt-1">Fetching premium collections from our active database.</p>
+                        </div>
+                    </div>
+
+                    <!-- Banner Indicators -->
+                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+                        <span onclick="setSlide(0)" class="w-2 h-2 rounded-full bg-white cursor-pointer slider-dot active"></span>
+                        <span onclick="setSlide(1)" class="w-2 h-2 rounded-full bg-white/40 cursor-pointer slider-dot"></span>
+                        <span onclick="setSlide(2)" class="w-2 h-2 rounded-full bg-white/40 cursor-pointer slider-dot"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LARGE PREMIUM PRODUCT GRID (Suggested For You) -->
+            <div class="px-4 py-3">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 id="section-header-title" class="text-lg font-extrabold text-gray-800 tracking-tight">Suggested For You</h3>
+                    <div class="w-8 h-8 rounded-full bg-fkBlue text-white flex items-center justify-center cursor-pointer shadow hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Custom larger item grids - Matches "item ka photo bada ho" -->
+                <div id="storefront-grid" class="space-y-6">
+                    <!-- Loaded dynamically in large format with top-aligned uncropped photos -->
+                </div>
+            </div>
+        </div>
+
+        <!-- CATEGORIES SECTION PANEL -->
+        <div id="section-categories" class="section-block hidden p-4 space-y-4">
+            
+            <!-- Standard Category Navigation View -->
+            <div id="category-main-grid-view" class="space-y-4">
+                <h2 class="text-xl font-black text-gray-800 tracking-tight mb-2">Explore Categories</h2>
+                <div id="categories-grid" class="grid grid-cols-2 gap-4">
+                    <!-- Dynamically loaded category cards -->
+                </div>
+            </div>
+
+            <!-- NEW: Dedicated dynamic category product display page -->
+            <div id="category-dedicated-view" class="hidden space-y-4">
+                <button onclick="closeCategoryDedicatedView()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors font-bold text-xs">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Categories
+                </button>
+                <div class="border-l-4 border-fkBlue pl-2">
+                    <h2 id="dedicated-category-title" class="text-2xl font-black text-gray-800 tracking-tight capitalize">Category Collection</h2>
+                    <p class="text-xs text-gray-400 font-semibold uppercase">Premium items curated by Admin</p>
+                </div>
+                
+                <!-- Dynamic Dedicated Large Product Grid -->
+                <div id="dedicated-category-grid" class="space-y-6 pt-2">
+                    <!-- Loaded dynamically with Large product view alignment -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT & INSTAGRAM BRAND PROFILE PANEL -->
+        <div id="section-about" class="section-block hidden p-6 space-y-6 text-center">
+            <div class="w-20 h-20 bg-fkBlue/10 text-fkBlue text-4xl flex items-center justify-center rounded-3xl mx-auto shadow-inner">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+            
+            <div class="space-y-2">
+                <h2 class="text-2xl font-black tracking-tight text-gray-800">AIFSWAG Official</h2>
+                <p class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Premium Couture & Aromas</p>
+                <div id="about-auth-status" class="text-xs text-gray-500">Not Logged In</div>
+            </div>
+
+            <p class="text-sm text-gray-500 leading-relaxed max-w-sm mx-auto">
+                Discover exceptional streetwear and timeless fragrance combinations. Tailored strictly for elite enthusiasts looking for unmatched authenticity.
+            </p>
+
+            <!-- Instagram Connection Node -->
+            <div class="pt-4 max-w-xs mx-auto">
+                <a href="https://www.instagram.com/aifswag?igsh=MTh4dDB4Y2Y3dGFrNw==" target="_blank" rel="noopener noreferrer" class="instagram-glow block p-6 rounded-3xl text-white transition-all transform hover:scale-105">
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-3xl animate-pulse">
+                            <i class="fa-brands fa-instagram text-white"></i>
+                        </div>
+                        <h4 class="font-black text-lg tracking-wider">FOLLOW @AIFSWAG</h4>
+                        <p class="text-[10px] text-white/85 tracking-widest font-bold uppercase">Join the Elite Club on Instagram</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Login / Logout UI block inside About page -->
+            <div class="pt-4" id="about-auth-btn-container">
+                <button onclick="handleGoogleLogin()" class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-full font-bold text-sm tracking-wide transition-all shadow-lg shadow-red-600/30 inline-flex items-center gap-2">
+                    <i class="fa-brands fa-google"></i> Login with Google
+                </button>
+            </div>
+
+            <div class="border-t border-gray-150 pt-6 space-y-4 text-left">
+                <h4 class="font-bold text-gray-800 text-sm">Delivery Assurance</h4>
+                <div class="flex items-start gap-3">
+                    <i class="fa-solid fa-shield-halved text-green-600 mt-0.5 text-lg"></i>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        Every order receives custom priority packaging to safeguard the fabrics and ensure accurate structural notes. Delivered across Chapra safely.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ORDERS TAB PANEL (Displays user's live placed orders) -->
+        <div id="section-orders" class="section-block hidden p-4 space-y-4">
+            <div class="flex items-center justify-between mb-2">
+                <h2 class="text-xl font-black text-gray-800 tracking-tight">Your Dispatched Orders</h2>
+                <span class="bg-green-100 text-green-800 text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-ping"></span> Live Status
+                </span>
+            </div>
+
+            <div id="orders-log-container" class="space-y-4">
+                <!-- Loaded dynamically from Firebase based on Google UID -->
+                <div class="text-center py-12 text-gray-400 space-y-3">
+                    <i class="fa-solid fa-clipboard-list text-5xl text-gray-300"></i>
+                    <h4 class="font-bold text-sm">No orders recorded yet</h4>
+                    <p class="text-xs text-gray-400">Place your first order to track live dispatches around Chapra.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTOM STICKY FLIPKART-STYLE NAV BAR -->
+        <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white border-t border-gray-200 grid grid-cols-4 py-2 px-1 z-40 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] text-center">
+            <div onclick="showSection('home')" id="nav-home" class="flex flex-col items-center justify-center cursor-pointer text-fkBlue font-bold transition-all nav-item">
+                <i class="fa-solid fa-house text-lg"></i>
+                <span class="text-[10px] mt-0.5">Home</span>
+            </div>
+            <div onclick="showSection('categories')" id="nav-categories" class="flex flex-col items-center justify-center cursor-pointer text-gray-400 hover:text-fkBlue transition-all nav-item">
+                <i class="fa-solid fa-grip text-lg"></i>
+                <span class="text-[10px] mt-0.5">Categories</span>
+            </div>
+            <div onclick="showSection('about')" id="nav-about" class="flex flex-col items-center justify-center cursor-pointer text-gray-400 hover:text-fkBlue transition-all nav-item">
+                <i class="fa-solid fa-circle-info text-lg"></i>
+                <span class="text-[10px] mt-0.5">About</span>
+            </div>
+            <div onclick="showSection('orders')" id="nav-orders" class="relative flex flex-col items-center justify-center cursor-pointer text-gray-400 hover:text-fkBlue transition-all nav-item">
+                <i class="fa-solid fa-clipboard-list text-lg"></i>
+                <span class="text-[10px] mt-0.5">Order</span>
+                <span id="navOrdersBadge" class="absolute top-0.5 right-6 bg-red-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full scale-90 hidden">0</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 4. SLIDE-OUT PRODUCT DETAIL & CHECKOUT DRAWER -->
+    <div id="productDetailPanel" class="fixed inset-y-0 right-[-100%] w-full max-w-md bg-white z-50 shadow-2xl transition-all duration-500 flex flex-col overflow-hidden">
+        
+        <!-- Drawer Header -->
+        <div class="p-4 border-b border-gray-200 flex items-center justify-between bg-gray-50">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-fkBlue flex items-center justify-center text-white font-extrabold text-sm italic">A</div>
+                <span class="font-bold text-gray-800 tracking-wide text-sm">Order Dispatch Form</span>
+            </div>
+            <button onclick="closeDetailPanel()" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-gray-200 transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Scrollable Order Details Form Body -->
+        <div class="flex-1 overflow-y-auto p-5 space-y-5">
+            <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100 flex flex-col items-center">
+                <img id="panelProductImg" src="https://placehold.co/400" class="max-h-56 max-w-full object-contain rounded-xl drop-shadow-sm">
+            </div>
+
+            <div>
+                <span class="text-[10px] uppercase tracking-wider text-fkBlue font-bold bg-blue-50 px-2.5 py-1 rounded-full" id="panelCategoryBadge">Category</span>
+                <h2 id="panelProductTitle" class="text-xl font-bold text-gray-800 mt-2">Oversized Swagger Hoodie</h2>
+                <p id="panelProductDesc" class="text-xs text-gray-400 mt-2 leading-relaxed">High-grade construction designed for premium street fashion wear cycles.</p>
+            </div>
+
+            <div class="bg-blue-50/50 p-4 rounded-2xl border border-blue-100/40 flex justify-between items-center">
+                <div>
+                    <span class="text-[10px] text-gray-400 uppercase font-semibold">Unit Price</span>
+                    <h4 id="panelProductPrice" class="text-2xl font-black text-fkBlue">₹1,499</h4>
+                </div>
+                <div class="text-right">
+                    <span class="text-[10px] text-gray-400 uppercase font-semibold">Delivery Fee</span>
+                    <h4 id="panelDeliveryCost" class="text-sm font-bold text-gray-700">₹60</h4>
+                </div>
+            </div>
+
+            <!-- GOOGLE LOGIN GUARD BLOCK -->
+            <div id="checkout-auth-guard" class="hidden text-center py-6 px-4 border border-dashed border-red-200 rounded-3xl bg-red-50/50 space-y-4">
+                <div class="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center mx-auto text-xl">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div>
+                    <h4 class="font-extrabold text-gray-800 text-sm">Authentication Required</h4>
+                    <p class="text-xs text-gray-400 mt-1">Please secure your identity using Google login to request dispatches.</p>
+                </div>
+                <button type="button" onclick="handleGoogleLogin()" class="w-full py-3 bg-red-600 hover:bg-red-700 text-white rounded-xl font-bold text-sm tracking-wide transition-all shadow-md shadow-red-600/25 flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-google"></i> Login with Google
+                </button>
+            </div>
+
+            <!-- Checkout Forms -->
+            <form id="orderForm" onsubmit="submitFormOrder(event)" class="space-y-4">
+                <div class="flex items-center justify-between bg-gray-50 p-3.5 rounded-xl border border-gray-100">
+                    <span class="text-xs font-semibold text-gray-600 uppercase">Quantity:</span>
+                    <div class="flex items-center gap-3">
+                        <button type="button" onclick="modifyQty(-1)" class="w-8 h-8 rounded-full bg-white border border-gray-300 text-gray-600 font-bold flex items-center justify-center hover:bg-gray-100 transition-colors">-</button>
+                        <span id="orderQtyText" class="text-base font-bold text-gray-800 min-w-[20px] text-center">1</span>
+                        <button type="button" onclick="modifyQty(1)" class="w-8 h-8 rounded-full bg-white border border-gray-300 text-gray-600 font-bold flex items-center justify-center hover:bg-gray-100 transition-colors">+</button>
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-[10px] font-bold text-gray-600 uppercase">Full Name</label>
+                    <input type="text" id="custName" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-fkBlue text-sm bg-gray-55" placeholder="e.g. Rahul Kumar">
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-[10px] font-bold text-gray-600 uppercase">Active Contact Number</label>
+                    <input type="tel" id="custPhone" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-fkBlue text-sm bg-gray-55" placeholder="e.g. 98765xxxxx">
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-[10px] font-bold text-gray-600 uppercase">Delivery Address (Saran / Chapra)</label>
+                    <textarea id="custAddress" required rows="3" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-fkBlue text-sm bg-gray-55 resize-none" placeholder="Complete street location landmark detail inside Chapra region"></textarea>
+                </div>
+
+                <div class="border-t border-dashed border-gray-200 pt-4 flex justify-between items-center text-gray-800">
+                    <span class="font-bold text-sm">Grand Total Calculated:</span>
+                    <span id="grandTotalValue" class="text-xl font-extrabold text-green-600">₹1,559</span>
+                </div>
+
+                <button type="submit" class="w-full py-4 bg-green-600 text-white rounded-xl font-bold text-base hover:bg-green-700 transition-all flex items-center justify-center gap-2 shadow-lg shadow-green-600/25 active:scale-95">
+                    <i class="fa-solid fa-circle-check"></i> CONFIRM DISPATCH ORDER
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 5. DELIVERY LOCATION STRIP INFORMATION DIALOG -->
+    <div id="locationModal" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 text-center space-y-4 shadow-2xl relative">
+            <div class="w-16 h-16 rounded-full bg-blue-100 text-fkBlue text-3xl flex items-center justify-center mx-auto">
+                <i class="fa-solid fa-truck-fast"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800">Configure Delivery Profile</h3>
+            <p class="text-xs text-gray-500 leading-relaxed">
+                Save your standard coordinates once to instantly fill forms and expedite dispatches everywhere around Chapra.
+            </p>
+            
+            <div class="space-y-3 text-left">
+                <div class="space-y-1">
+                    <label class="text-[9px] font-bold text-gray-500 uppercase">Full Name</label>
+                    <input type="text" id="locName" class="w-full px-3 py-2 border rounded-xl text-xs focus:outline-none focus:border-fkBlue" placeholder="e.g. Rahul Kumar">
+                </div>
+                <div class="space-y-1">
+                    <label class="text-[9px] font-bold text-gray-500 uppercase">Contact Phone Number</label>
+                    <input type="tel" id="locPhone" class="w-full px-3 py-2 border rounded-xl text-xs focus:outline-none focus:border-fkBlue" placeholder="e.g. 98765xxxxx">
+                </div>
+                <div class="space-y-1">
+                    <label class="text-[9px] font-bold text-gray-500 uppercase">Chapra Delivery Address Details</label>
+                    <textarea id="locAddress" rows="2" class="w-full px-3 py-2 border rounded-xl text-xs focus:outline-none focus:border-fkBlue resize-none" placeholder="Landmark, road name, location..."></textarea>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 pt-2">
+                <button onclick="closeLocationModal()" class="py-3 bg-gray-100 text-gray-700 rounded-xl font-semibold text-xs hover:bg-gray-200 transition-colors">
+                    Discard
+                </button>
+                <button onclick="saveDeliveryProfile()" class="py-3 bg-fkBlue text-white rounded-xl font-semibold text-xs hover:bg-blue-600 transition-colors">
+                    Save Coordinates
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. IN-APP TOAST SYSTEM -->
+    <div id="toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 bg-green-600 text-white font-semibold text-sm px-6 py-3.5 rounded-full shadow-2xl transition-all duration-300 transform translate-y-24 opacity-0 z-50 flex items-center gap-2">
+        <i class="fa-solid fa-circle-check text-base"></i>
+        <span id="toastMessage">Order processed successfully!</span>
+    </div>
+
+    <!-- Interactive Panel Blur Overlay background -->
+    <div id="panelOverlay" onclick="closeDetailPanel()" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 hidden transition-all duration-300"></div>
+
+    <!-- Realtime Firebase v8 Database & Authentication integration -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+    <script>
+        // Firebase Core Setup using the direct Realtime Database config
+        const firebaseConfig = {
+            apiKey: "AIzaSyAAnaBoh28qA8H-mz1vf1_X6bZaxsjemJI",
+            authDomain: "ashif-store.firebaseapp.com",
+            databaseURL: "https://ashif-store-default-rtdb.firebaseio.com",
+            projectId: "ashif-store",
+            storageBucket: "ashif-store.firebasestorage.app",
+            messagingSenderId: "214788624681",
+            appId: "1:214788624681:web:bffcadecbc2078d41ba738"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+        const auth = firebase.auth();
+
+        // App State managers
+        let productsCollection = {};
+        let activeCategory = 'all';
+        let searchQuery = '';
+        let targetProduct = null;
+        let checkoutQty = 1;
+        let slideIndex = 0;
+        let userOrdersList = [];
+        let currentUser = null;
+
+        // Globalized exposure for custom inline elements
+        window.enterStore = enterStore;
+        window.filterCategory = filterCategory;
+        window.handleSearch = handleSearch;
+        window.openCheckoutDrawer = openCheckoutDrawer;
+        window.closeDetailPanel = closeDetailPanel;
+        window.modifyQty = modifyQty;
+        window.submitFormOrder = submitFormOrder;
+        window.openLocationModal = openLocationModal;
+        window.closeLocationModal = closeLocationModal;
+        window.saveDeliveryProfile = saveDeliveryProfile;
+        window.toggleDayNightMode = toggleDayNightMode;
+        window.showSection = showSection;
+        window.setSlide = setSlide;
+        window.handleGoogleLogin = handleGoogleLogin;
+        window.handleGoogleLogout = handleGoogleLogout;
+        window.handleAuthNodeClick = handleAuthNodeClick;
+        window.requestCancelOrder = requestCancelOrder;
+        window.openCategoryDedicatedPage = openCategoryDedicatedPage;
+        window.closeCategoryDedicatedView = closeCategoryDedicatedView;
+
+        // Life cycle sequence
+        window.addEventListener('DOMContentLoaded', () => {
+            // Screenplay sequence delay logic
+            setTimeout(() => {
+                const intro = document.getElementById('intro-screen');
+                const welcome = document.getElementById('welcome-view');
+                
+                intro.style.transition = 'opacity 0.6s ease';
+                intro.style.opacity = '0';
+                
+                setTimeout(() => {
+                    intro.style.display = 'none';
+                    welcome.style.display = 'flex';
+                    setTimeout(() => welcome.style.opacity = '1', 50);
+                }, 600);
+            }, 2500);
+
+            // Establish direct authentication state observer
+            auth.onAuthStateChanged((user) => {
+                if (user) {
+                    currentUser = user;
+                    updateAuthUIElements(true);
+                    
+                    // FIXED: Immediate Form State Sync inside Opened Drawer on login resolution
+                    if (targetProduct) {
+                        openCheckoutDrawer(targetProduct.id);
+                    }
+
+                    // AUTO-FLOW: Check if there was a pending order redirect before login
+                    const pendingId = localStorage.getItem('pending_order_product_id');
+                    if (pendingId) {
+                        localStorage.removeItem('pending_order_product_id');
+                        setTimeout(() => {
+                            openCheckoutDrawer(pendingId);
+                        }, 800);
+                    }
+                } else {
+                    currentUser = null;
+                    updateAuthUIElements(false);
+                }
+                // Refresh local/live syncing systems
+                refreshDeliveryProfileUI();
+                syncRealtimeStorefront();
+            });
+        });
+
+        // Dynamic welcome navigator
+        function enterStore() {
+            const welcome = document.getElementById('welcome-view');
+            const store = document.getElementById('store-view');
+            
+            welcome.style.opacity = '0';
+            setTimeout(() => {
+                welcome.style.display = 'none';
+                store.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 500);
+        }
+
+        // Firebase Google Login Handler
+        function handleGoogleLogin() {
+            const provider = new firebase.auth.GoogleAuthProvider();
+            auth.signInWithPopup(provider)
+                .then((result) => {
+                    displayToast(`Welcome ${result.user.displayName}! Access Granted.`);
+                })
+                .catch((err) => {
+                    console.error("Authentication rejected: ", err);
+                    displayToast("Login failed. Please verify credentials.");
+                });
+        }
+
+        // Google Logout Handler
+        function handleGoogleLogout() {
+            auth.signOut().then(() => {
+                displayToast("Successfully logged out of server session.");
+            });
+        }
+
+        // Handle avatar click in search bar
+        function handleAuthNodeClick() {
+            showSection('about');
+        }
+
+        // UI Updates based on Google Login Session
+        function updateAuthUIElements(isLoggedIn) {
+            const avatarContainer = document.getElementById('user-avatar-container');
+            const aboutStatus = document.getElementById('about-auth-status');
+            const aboutBtnContainer = document.getElementById('about-auth-btn-container');
+
+            if (isLoggedIn && currentUser) {
+                // Update navigation avatar with circular profile image
+                avatarContainer.className = "w-8 h-8 rounded-full overflow-hidden border border-gray-200 flex items-center justify-center bg-gray-100 cursor-pointer";
+                avatarContainer.innerHTML = `<img src="${currentUser.photoURL}" class="w-full h-full object-cover" alt="User Profile">`;
+                avatarContainer.onclick = handleAuthNodeClick;
+
+                // Update About status
+                aboutStatus.innerHTML = `Signed in as <strong class="text-fkBlue">${currentUser.displayName}</strong> (${currentUser.email})`;
+                // Update Logout button
+                aboutBtnContainer.innerHTML = `
+                    <button onclick="handleGoogleLogout()" class="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full font-bold text-sm tracking-wide transition-all inline-flex items-center gap-2">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout Session
+                    </button>
+                `;
+            } else {
+                // Render a clear, beautiful "Login" button pill in the corner of normal store
+                avatarContainer.className = "flex items-center justify-center";
+                avatarContainer.innerHTML = `
+                    <button onclick="event.stopPropagation(); handleGoogleLogin();" class="px-3 py-1.5 text-xs font-bold text-white bg-fkBlue rounded-full hover:bg-blue-600 transition-colors flex items-center gap-1 shadow-sm">
+                        <i class="fa-solid fa-right-to-bracket text-[10px]"></i> Login
+                    </button>
+                `;
+                avatarContainer.onclick = null;
+
+                // Update About status
+                aboutStatus.innerHTML = `Not Logged In`;
+                // Update Login button
+                aboutBtnContainer.innerHTML = `
+                    <button onclick="handleGoogleLogin()" class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-full font-bold text-sm tracking-wide transition-all shadow-lg shadow-red-600/30 inline-flex items-center gap-2">
+                        <i class="fa-brands fa-google"></i> Login with Google
+                    </button>
+                `;
+            }
+        }
+
+        // Sync catalog and private orders lists directly with Realtime Database
+        function syncRealtimeStorefront() {
+            // Realtime database path exactly matching Admin Panel uploads
+            database.ref('products').on('value', (snapshot) => {
+                productsCollection = snapshot.val() || {};
+                renderCategoryBar(productsCollection);
+                renderUIStorefront(productsCollection);
+                renderFeaturedCarousel(productsCollection);
+                renderCategoriesGrid(productsCollection);
+            }, (err) => {
+                console.error("Products collection synchronization failure:", err);
+            });
+
+            // If user is logged in, sync their specific orders
+            if (currentUser) {
+                database.ref('orders').on('value', (snapshot) => {
+                    const allOrders = snapshot.val() || {};
+                    userOrdersList = [];
+                    
+                    Object.keys(allOrders).forEach(orderId => {
+                        const data = allOrders[orderId];
+                        // Match with user Google UID or Google Email to construct orders log
+                        if (data.customerUID === currentUser.uid || data.customerEmail === currentUser.email) {
+                            userOrdersList.push({ ...data, id: orderId });
+                        }
+                    });
+
+                    userOrdersList.sort((a, b) => b.timestamp - a.timestamp);
+                    renderUserOrdersLog();
+                }, (err) => {
+                    console.error("Orders collection synchronization failure:", err);
+                });
+            } else {
+                userOrdersList = [];
+                renderUserOrdersLog();
+            }
+        }
+
+        // Horizontal Category compiling
+        function renderCategoryBar(products) {
+            const container = document.getElementById('categoryCapsules');
+            const categories = new Set();
+            
+            Object.values(products).forEach(item => {
+                if(item.category && item.category.trim() !== '') {
+                    categories.add(item.category.trim().toLowerCase());
+                }
+            });
+
+            let markup = `
+                <div onclick="filterCategory('all')" class="flex flex-col items-center flex-shrink-0 cursor-pointer group">
+                    <div class="w-14 h-14 rounded-full ${activeCategory === 'all' ? 'bg-fkBlue text-white shadow-md' : 'bg-gray-100 text-gray-600'} flex items-center justify-center group-hover:scale-105 transition-all duration-200 border border-gray-200">
+                        <i class="fa-solid fa-star text-lg"></i>
+                    </div>
+                    <span class="text-[11px] font-semibold mt-1.5 tracking-tight ${activeCategory === 'all' ? 'text-fkBlue font-bold' : 'text-gray-500'}">For You</span>
+                    ${activeCategory === 'all' ? '<div class="w-6 h-0.5 bg-fkBlue mt-1 rounded-full"></div>' : ''}
+                </div>
+            `;
+
+            categories.forEach(cat => {
+                const isActive = activeCategory.toLowerCase() === cat.toLowerCase();
+                const iconMap = {
+                    clothes: 'fa-shirt',
+                    clothing: 'fa-shirt',
+                    perfume: 'fa-spray-can-sparkles',
+                    perfumes: 'fa-spray-can-sparkles',
+                    accessories: 'fa-gem',
+                    electronics: 'fa-laptop'
+                };
+                const iconClass = iconMap[cat.toLowerCase()] || 'fa-tag';
+
+                markup += `
+                    <div onclick="filterCategory('${cat}')" class="flex flex-col items-center flex-shrink-0 cursor-pointer group">
+                        <div class="w-14 h-14 rounded-full ${isActive ? 'bg-fkBlue text-white shadow-md' : 'bg-gray-100 text-gray-600'} flex items-center justify-center group-hover:scale-105 transition-all duration-200 border border-gray-200">
+                            <i class="fa-solid ${iconClass} text-lg"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold mt-1.5 tracking-tight capitalize ${isActive ? 'text-fkBlue font-bold' : 'text-gray-500'}">${cat}</span>
+                        ${isActive ? '<div class="w-6 h-0.5 bg-fkBlue mt-1 rounded-full"></div>' : ''}
+                    </div>
+                `;
+            });
+
+            container.innerHTML = markup;
+        }
+
+        function filterCategory(cat) {
+            activeCategory = cat;
+            renderUIStorefront(productsCollection);
+            renderCategoryBar(productsCollection);
+            scrollToCategorySection();
+        }
+
+        function handleSearch(val) {
+            searchQuery = val;
+            renderUIStorefront(productsCollection);
+        }
+
+        function scrollToCategorySection() {
+            const target = document.getElementById('section-header-title');
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Smart handler to redirect to login if not logged in, otherwise open checkout drawer
+        function handleProductClick(id) {
+            if (!currentUser) {
+                localStorage.setItem('pending_order_product_id', id);
+                displayToast("Redirecting to Google Login first... suiiii!");
+                handleGoogleLogin();
+            } else {
+                openCheckoutDrawer(id);
+            }
+        }
+
+        // Large Format UI render - Matches "item bada dikhaye chota nahi, photo upar se hi dikhe"
+        function renderUIStorefront(products) {
+            const grid = document.getElementById('storefront-grid');
+            const title = document.getElementById('section-header-title');
+            grid.innerHTML = '';
+
+            let sorted = [];
+            Object.keys(products).forEach(id => {
+                const item = products[id];
+                const matchSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                    (item.category && item.category.toLowerCase().includes(searchQuery.toLowerCase()));
+                
+                const matchCategory = activeCategory === 'all' || 
+                                      (item.category && item.category.toLowerCase().trim() === activeCategory.toLowerCase().trim());
+
+                if (matchSearch && matchCategory) {
+                    sorted.push({ ...item, id: id });
+                }
+            });
+
+            title.innerText = activeCategory === 'all' ? "Suggested For You" : `${activeCategory} Collection`;
+
+            if (sorted.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-2 text-center py-16 text-gray-400 space-y-2">
+                        <i class="fa-solid fa-box-open text-4xl text-gray-300"></i>
+                        <h4 class="font-bold text-sm text-gray-600">No matching products found</h4>
+                        <p class="text-xs text-gray-400">Please clean search filter and query details.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            sorted.forEach(item => {
+                const card = `
+                    <div class="bg-white rounded-3xl border border-gray-150 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative group">
+                        
+                        <span class="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-white text-[9px] font-black px-2.5 py-1 rounded-full tracking-wider z-10">
+                            AIFSWAG ORIGINAL
+                        </span>
+
+                        <div class="absolute top-4 right-4 bg-fkYellow text-black text-[9px] font-black px-2 py-1 rounded-full z-10 shadow">
+                            ★ HOT
+                        </div>
+                        
+                        <!-- High scale uncropped top-aligned image structure -->
+                        <div class="w-full bg-white p-4 flex items-center justify-center cursor-pointer" onclick="handleProductClick('${item.id}')">
+                            <img src="${item.imageUrl}" class="w-full h-72 md:h-96 object-contain rounded-2xl transition-transform duration-500 group-hover:scale-105" alt="${item.title}">
+                        </div>
+
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-3 bg-neutral-50/50 border-t border-gray-100">
+                            <div>
+                                <h4 class="text-lg font-black text-gray-900 tracking-tight leading-tight capitalize">${item.title}</h4>
+                                <p class="text-xs text-gray-500 mt-1.5 leading-relaxed line-clamp-3">${item.about || 'Premium exclusive formulation tailored for elite trendsetters.'}</p>
+                            </div>
+                            
+                            <div class="flex items-center justify-between pt-3 border-t border-gray-100/80">
+                                <span class="text-xl font-extrabold text-fkBlue">₹${parseFloat(item.price).toLocaleString()}</span>
+                                <span class="text-xs text-gray-400 font-bold flex items-center gap-1">
+                                    <i class="fa-solid fa-truck text-[10px]"></i> Del: ₹${item.deliveryCharge || '0'}
+                                </span>
+                            </div>
+
+                            <!-- Explicit "Order Now" button at card bottom -->
+                            <button onclick="handleProductClick('${item.id}')" class="w-full py-3.5 mt-2 bg-fkBlue hover:bg-blue-600 text-white rounded-2xl font-bold text-sm tracking-wide transition-all active:scale-95 flex items-center justify-center gap-2 shadow-md shadow-fkBlue/20">
+                                <i class="fa-solid fa-bag-shopping text-xs"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        // Dynamic categories card grid compile (Displays under Categories main list tab)
+        function renderCategoriesGrid(products) {
+            const grid = document.getElementById('categories-grid');
+            grid.innerHTML = '';
+            
+            const categories = new Set();
+            Object.values(products).forEach(item => {
+                if (item.category) categories.add(item.category.trim().toLowerCase());
+            });
+
+            categories.forEach(cat => {
+                const filteredList = Object.values(products).filter(p => p.category && p.category.toLowerCase().trim() === cat);
+                const count = filteredList.length;
+                const sampleImg = filteredList[0]?.imageUrl || 'https://placehold.co/200';
+
+                const card = `
+                    <div onclick="openCategoryDedicatedPage('${cat}')" class="bg-gray-50 border border-gray-200 p-5 rounded-3xl text-center space-y-3 hover:shadow-lg transition-all duration-300 cursor-pointer hover:border-fkBlue">
+                        <img src="${sampleImg}" class="w-24 h-24 object-contain mx-auto rounded-2xl bg-white p-1.5 shadow-sm">
+                        <div>
+                            <h4 class="font-extrabold text-gray-800 text-sm capitalize">${cat}</h4>
+                            <span class="bg-fkBlue/10 text-fkBlue text-[9px] font-bold px-2 py-0.5 rounded-full mt-1 inline-block">${count} Items</span>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        // NEW: Dedicated Sub-Page Category Display Logic
+        function openCategoryDedicatedPage(catName) {
+            const gridView = document.getElementById('category-main-grid-view');
+            const dedicatedView = document.getElementById('category-dedicated-view');
+            const title = document.getElementById('dedicated-category-title');
+            const productGrid = document.getElementById('dedicated-category-grid');
+
+            // Set Category Head label
+            title.innerText = `${catName} Collection`;
+            productGrid.innerHTML = '';
+
+            // Filter products strictly matching this specific category
+            const filteredItems = Object.keys(productsCollection)
+                .filter(id => productsCollection[id].category && productsCollection[id].category.toLowerCase().trim() === catName.toLowerCase().trim())
+                .map(id => ({ ...productsCollection[id], id: id }));
+
+            if (filteredItems.length === 0) {
+                productGrid.innerHTML = `
+                    <div class="text-center py-12 text-gray-400 space-y-2">
+                        <i class="fa-solid fa-folder-open text-4xl text-gray-300 animate-bounce"></i>
+                        <h4 class="font-bold text-sm">No items in this category</h4>
+                        <p class="text-xs text-gray-400">Products are currently out of stock or being modified.</p>
+                    </div>
+                `;
+            } else {
+                // Compile large photo-oriented cards matching user specs ("item bada dikhaye, photo uper se hi dikhe")
+                filteredItems.forEach(item => {
+                    const card = `
+                        <div class="bg-white rounded-3xl border border-gray-150 shadow-md overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative group">
+                            <span class="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-white text-[9px] font-black px-2.5 py-1 rounded-full tracking-wider z-10">
+                                AIFSWAG ORIGINAL
+                            </span>
+                            
+                            <!-- High scale uncropped top-aligned image structure -->
+                            <div class="w-full bg-white p-4 flex items-center justify-center cursor-pointer" onclick="handleProductClick('${item.id}')">
+                                <img src="${item.imageUrl}" class="w-full h-72 md:h-96 object-contain rounded-2xl transition-transform duration-500 group-hover:scale-105" alt="${item.title}">
+                            </div>
+
+                            <div class="p-6 flex-1 flex flex-col justify-between space-y-3 bg-neutral-50/50 border-t border-gray-100">
+                                <div>
+                                    <h4 class="text-lg font-black text-gray-900 tracking-tight leading-tight capitalize">${item.title}</h4>
+                                    <p class="text-xs text-gray-500 mt-1.5 leading-relaxed line-clamp-3">${item.about || 'Premium exclusive formulation tailored for elite trendsetters.'}</p>
+                                </div>
+                                
+                                <div class="flex items-center justify-between pt-3 border-t border-gray-100/80">
+                                    <span class="text-xl font-extrabold text-fkBlue">₹${parseFloat(item.price).toLocaleString()}</span>
+                                    <span class="text-xs text-gray-400 font-bold flex items-center gap-1">
+                                        <i class="fa-solid fa-truck text-[10px]"></i> Del: ₹${item.deliveryCharge || '0'}
+                                    </span>
+                                </div>
+
+                                <!-- Explicit "Order Now" button -->
+                                <button onclick="handleProductClick('${item.id}')" class="w-full py-3.5 mt-2 bg-fkBlue hover:bg-blue-600 text-white rounded-2xl font-bold text-sm tracking-wide transition-all active:scale-95 flex items-center justify-center gap-2 shadow-md shadow-fkBlue/20">
+                                    <i class="fa-solid fa-bag-shopping text-xs"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    productGrid.innerHTML += card;
+                });
+            }
+
+            // Perform View Transition
+            gridView.classList.add('hidden');
+            dedicatedView.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function closeCategoryDedicatedView() {
+            document.getElementById('category-dedicated-view').classList.add('hidden');
+            document.getElementById('category-main-grid-view').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Fetch top 3 products dynamically to showcase in live Carousel banner
+        function renderFeaturedCarousel(products) {
+            const items = Object.values(products);
+            if(items.length === 0) return;
+
+            const slider = document.getElementById('banner-slider');
+            const topProducts = items.slice(0, 3);
+            const activeProd = topProducts[slideIndex % topProducts.length];
+
+            if(!activeProd) return;
+
+            slider.style.opacity = '0';
+            setTimeout(() => {
+                slider.innerHTML = `
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="space-y-1.5 max-w-[65%]">
+                            <span class="bg-fkYellow text-black text-[9px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm">SALE IS LIVE</span>
+                            <h3 class="text-xl font-black tracking-tight leading-tight">${activeProd.title}</h3>
+                            <p class="text-xs text-blue-100 leading-snug line-clamp-2">${activeProd.about || 'Premium highly demanded release.'}</p>
+                            <div class="pt-1 flex items-center gap-3">
+                                <span class="text-fkYellow font-black text-sm">₹${activeProd.price}</span>
+                                <span class="text-[10px] text-blue-200">Delivery: ₹${activeProd.deliveryCharge || '0'}</span>
+                            </div>
+                        </div>
+                        <div class="w-20 h-20 bg-white/10 backdrop-blur-md rounded-2xl p-1 flex items-center justify-center cursor-pointer" onclick="handleProductClick('${activeProd.id}')">
+                            <img src="${activeProd.imageUrl}" class="w-full h-full object-contain rounded-xl">
+                        </div>
+                    </div>
+                `;
+                slider.style.opacity = '1';
+            }, 300);
+
+            // Re-render dots
+            const dots = document.querySelectorAll('.slider-dot');
+            dots.forEach((dot, idx) => {
+                if (idx === (slideIndex % topProducts.length)) {
+                    dot.classList.add('bg-fkYellow');
+                    dot.classList.remove('bg-white/40');
+                } else {
+                    dot.classList.remove('bg-fkYellow');
+                    dot.classList.add('bg-white/40');
+                }
+            });
+        }
+
+        function setSlide(idx) {
+            slideIndex = idx;
+            renderFeaturedCarousel(productsCollection);
+        }
+
+        // Auto rotation sequence
+        setInterval(() => {
+            slideIndex++;
+            renderFeaturedCarousel(productsCollection);
+        }, 6000);
+
+        // Navigation system switcher
+        function showSection(sectionId) {
+            document.querySelectorAll('.section-block').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.nav-item').forEach(el => {
+                el.classList.remove('text-fkBlue', 'font-bold');
+                el.classList.add('text-gray-400');
+            });
+
+            document.getElementById(`section-${sectionId}`).classList.remove('hidden');
+            
+            // If exiting Categories section, reset dedicated back-state seamlessly
+            if (sectionId !== 'categories') {
+                closeCategoryDedicatedView();
+            }
+
+            const targetNav = document.getElementById(`nav-${sectionId}`);
+            if (targetNav) {
+                targetNav.classList.add('text-fkBlue', 'font-bold');
+                targetNav.classList.remove('text-gray-400');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Open/Close Delivery Settings
+        function openLocationModal() {
+            document.getElementById('locName').value = localStorage.getItem('aifswag_customer_name') || '';
+            document.getElementById('locPhone').value = localStorage.getItem('aifswag_customer_phone') || '';
+            document.getElementById('locAddress').value = localStorage.getItem('aifswag_customer_address') || '';
+
+            document.getElementById('locationModal').classList.remove('hidden');
+            document.getElementById('locationModal').classList.add('flex');
+        }
+
+        function closeLocationModal() {
+            document.getElementById('locationModal').classList.add('hidden');
+            document.getElementById('locationModal').classList.remove('flex');
+        }
+
+        // Save delivery settings on browser state
+        function saveDeliveryProfile() {
+            const name = document.getElementById('locName').value.trim();
+            const phone = document.getElementById('locPhone').value.trim();
+            const address = document.getElementById('locAddress').value.trim();
+
+            if (!name || !phone || !address) {
+                displayToast("Please fill all details to register coordinates.");
+                return;
+            }
+
+            localStorage.setItem('aifswag_customer_name', name);
+            localStorage.setItem('aifswag_customer_phone', phone);
+            localStorage.setItem('aifswag_customer_address', address);
+
+            refreshDeliveryProfileUI();
+            closeLocationModal();
+            displayToast("Standard coordinates saved! Autofill active.");
+        }
+
+        function refreshDeliveryProfileUI() {
+            const savedName = localStorage.getItem('aifswag_customer_name') || (currentUser ? currentUser.displayName : '');
+            const targetText = document.getElementById('savedLocationText');
+            if (savedName) {
+                targetText.innerHTML = `Delivering to <strong class="text-gray-900">${savedName}</strong>, Chapra`;
+            } else {
+                targetText.innerHTML = `Delivering to <strong class="text-gray-900">Chapra, Bihar</strong>`;
+            }
+        }
+
+        // Slide out Checkout Drawer operations
+        function openCheckoutDrawer(id) {
+            targetProduct = productsCollection[id];
+            targetProduct.id = id;
+            checkoutQty = 1;
+
+            document.getElementById('panelProductImg').src = targetProduct.imageUrl;
+            document.getElementById('panelCategoryBadge').innerText = targetProduct.category || "General";
+            document.getElementById('panelProductTitle').innerText = targetProduct.title;
+            document.getElementById('panelProductDesc').innerText = targetProduct.about || "Premium crafted choice.";
+            document.getElementById('panelProductPrice').innerText = `₹${targetProduct.price}`;
+            document.getElementById('panelDeliveryCost').innerText = `₹${targetProduct.deliveryCharge || '0'}`;
+
+            // Check if authenticated to show checkout form or Google auth blocker
+            const form = document.getElementById('orderForm');
+            const guard = document.getElementById('checkout-auth-guard');
+
+            if (currentUser) {
+                form.classList.remove('hidden');
+                guard.classList.add('hidden');
+
+                // Auto-fill Google data and custom metadata
+                document.getElementById('custName').value = localStorage.getItem('aifswag_customer_name') || currentUser.displayName || '';
+                document.getElementById('custPhone').value = localStorage.getItem('aifswag_customer_phone') || '';
+                document.getElementById('custAddress').value = localStorage.getItem('aifswag_customer_address') || '';
+            } else {
+                form.classList.add('hidden');
+                guard.classList.remove('hidden');
+            }
+
+            computeGrandTotal();
+
+            const overlay = document.getElementById('panelOverlay');
+            const panel = document.getElementById('productDetailPanel');
+
+            overlay.classList.remove('hidden');
+            setTimeout(() => {
+                panel.style.right = '0';
+            }, 50);
+        }
+
+        function closeDetailPanel() {
+            const overlay = document.getElementById('panelOverlay');
+            const panel = document.getElementById('productDetailPanel');
+
+            panel.style.right = '-100%';
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+            }, 300);
+        }
+
+        function modifyQty(val) {
+            checkoutQty += val;
+            if (checkoutQty < 1) checkoutQty = 1;
+            document.getElementById('orderQtyText').innerText = checkoutQty;
+            computeGrandTotal();
+        }
+
+        function computeGrandTotal() {
+            if (!targetProduct) return;
+            const price = parseFloat(targetProduct.price) || 0;
+            const delivery = parseFloat(targetProduct.deliveryCharge) || 0;
+            const totalSum = (price * checkoutQty) + delivery;
+            document.getElementById('grandTotalValue').innerText = `₹${totalSum.toLocaleString()}`;
+        }
+
+        // Secure Payload syncing directly to 'orders' node in Firebase Realtime DB
+        function submitFormOrder(e) {
+            e.preventDefault();
+            if (!targetProduct) return;
+            if (!currentUser) {
+                displayToast("Please authenticate with Google to place orders.");
+                return;
+            }
+
+            const name = document.getElementById('custName').value.trim();
+            const phone = document.getElementById('custPhone').value.trim();
+            const address = document.getElementById('custAddress').value.trim();
+
+            if (!name || !phone || !address) {
+                displayToast("All fields are required completely!");
+                return;
+            }
+
+            // Save metrics on browser localstorage for instant autofill next time
+            localStorage.setItem('aifswag_customer_name', name);
+            localStorage.setItem('aifswag_customer_phone', phone);
+            localStorage.setItem('aifswag_customer_address', address);
+            refreshDeliveryProfileUI();
+
+            const totalPayable = (parseFloat(targetProduct.price) * checkoutQty) + (parseFloat(targetProduct.deliveryCharge) || 0);
+
+            const payload = {
+                productID: targetProduct.id,
+                productTitle: targetProduct.title,
+                pricePerItem: targetProduct.price,
+                quantity: checkoutQty,
+                totalCalculatedAmount: totalPayable,
+                customerName: name,
+                customerPhone: phone,
+                customerAddress: address,
+                customerUID: currentUser.uid,
+                customerEmail: currentUser.email,
+                timestamp: Date.now(),
+                status: 'pending' // pending -> packing -> dispatched -> delivered
+            };
+
+            database.ref('orders').push(payload)
+                .then(() => {
+                    closeDetailPanel();
+                    displayToast("Order Placed Successfully! Dispatching soon.");
+                    
+                    // Redirect user to the Dispatched Orders tracking tab
+                    setTimeout(() => {
+                        showSection('orders');
+                    }, 1000);
+                })
+                .catch(err => {
+                    console.error("Order payload submission error:", err);
+                    displayToast("Network Error! Please try again.");
+                });
+        }
+
+        // Realtime order cancellation module on client-side
+        function requestCancelOrder(orderId) {
+            if (confirm("Are you sure you want to cancel this order? This action cannot be undone.")) {
+                database.ref(`orders/${orderId}`).remove()
+                    .then(() => {
+                        displayToast("Order has been successfully cancelled & deleted.");
+                    })
+                    .catch((err) => {
+                        console.error("Cancellation error: ", err);
+                        displayToast("Failed to cancel order. Try again.");
+                    });
+            }
+        }
+
+        // Render placed orders tracker list with Cancel Option
+        function renderUserOrdersLog() {
+            const container = document.getElementById('orders-log-container');
+            const badge = document.getElementById('navOrdersBadge');
+            
+            if (!currentUser) {
+                badge.classList.add('hidden');
+                container.innerHTML = `
+                    <div class="text-center py-12 px-6 text-gray-400 space-y-4">
+                        <i class="fa-solid fa-lock text-5xl text-gray-300"></i>
+                        <h4 class="font-bold text-sm text-gray-700">Login Required to View Orders</h4>
+                        <p class="text-xs text-gray-400 max-w-xs mx-auto">Please authorize with Google inside the 'About' tab to check your active dispatches around Chapra.</p>
+                        <button onclick="handleGoogleLogin()" class="px-5 py-2.5 bg-red-600 text-white rounded-full font-bold text-xs inline-flex items-center gap-2 shadow-lg shadow-red-600/30">
+                            <i class="fa-brands fa-google"></i> Login with Google
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            if(userOrdersList.length === 0) {
+                badge.classList.add('hidden');
+                container.innerHTML = `
+                    <div class="text-center py-12 text-gray-400 space-y-3">
+                        <i class="fa-solid fa-clipboard-list text-5xl text-gray-300"></i>
+                        <h4 class="font-bold text-sm">No orders recorded yet</h4>
+                        <p class="text-xs text-gray-400">Place your first order to track live dispatches around Chapra.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            badge.innerText = userOrdersList.length;
+            badge.classList.remove('hidden');
+            container.innerHTML = '';
+
+            userOrdersList.forEach(order => {
+                const orderDate = new Date(order.timestamp).toLocaleString();
+                
+                let statusBadge = '';
+                let cancelBtnHTML = '';
+
+                if(order.status === 'pending') {
+                    statusBadge = `<span class="bg-yellow-100 text-yellow-800 border border-yellow-200 text-[10px] font-extrabold px-2.5 py-1 rounded-full"><i class="fa-solid fa-clock"></i> Pending Dispatch</span>`;
+                    // Cancel Option strictly allowed only during pending/packing state
+                    cancelBtnHTML = `
+                        <button onclick="requestCancelOrder('${order.id}')" class="w-full mt-2.5 py-2 bg-red-50 hover:bg-red-100 border border-red-200 text-red-600 rounded-xl text-xs font-bold transition-colors flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-trash-can"></i> Cancel This Order
+                        </button>
+                    `;
+                } else if(order.status === 'packing') {
+                    statusBadge = `<span class="bg-blue-100 text-fkBlue border border-blue-200 text-[10px] font-extrabold px-2.5 py-1 rounded-full"><i class="fa-solid fa-box"></i> Packed & Sealed</span>`;
+                    cancelBtnHTML = `
+                        <button onclick="requestCancelOrder('${order.id}')" class="w-full mt-2.5 py-2 bg-red-50 hover:bg-red-100 border border-red-200 text-red-600 rounded-xl text-xs font-bold transition-colors flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-trash-can"></i> Cancel This Order
+                        </button>
+                    `;
+                } else if(order.status === 'dispatched') {
+                    statusBadge = `<span class="bg-indigo-100 text-indigo-800 border border-indigo-200 text-[10px] font-extrabold px-2.5 py-1 rounded-full animate-pulse"><i class="fa-solid fa-truck"></i> Out for Delivery</span>`;
+                    // Cannot cancel once dispatched
+                    cancelBtnHTML = `<div class="text-[10px] text-gray-400 italic text-center mt-2">Cannot cancel order. Already dispatched via Chapra Hub.</div>`;
+                } else {
+                    statusBadge = `<span class="bg-green-100 text-green-800 border border-green-200 text-[10px] font-extrabold px-2.5 py-1 rounded-full"><i class="fa-solid fa-circle-check"></i> Delivered</span>`;
+                }
+
+                const card = `
+                    <div class="bg-white border border-gray-150 rounded-2xl p-4 shadow-sm space-y-3">
+                        <div class="flex items-center justify-between border-b border-gray-100 pb-2.5">
+                            <div>
+                                <span class="text-[10px] text-gray-400 font-bold uppercase">Order ID: #${order.id.substring(0, 8)}</span>
+                                <p class="text-[10px] text-gray-500 mt-0.5">${orderDate}</p>
+                            </div>
+                            ${statusBadge}
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-12 h-12 bg-gray-50 border border-gray-100 rounded-xl flex items-center justify-center text-fkBlue text-lg">
+                                <i class="fa-solid fa-box"></i>
+                            </div>
+                            <div class="space-y-0.5">
+                                <h4 class="font-bold text-gray-800 text-sm capitalize">${order.productTitle}</h4>
+                                <p class="text-xs text-gray-500">Quantity: ${order.quantity} x Item Price: ₹${order.pricePerItem}</p>
+                                <p class="text-xs text-gray-800 font-extrabold">Total Charged Amount: ₹${order.totalCalculatedAmount}</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 p-2.5 rounded-xl border border-gray-100 text-[11px] text-gray-500 space-y-0.5">
+                            <span class="font-bold text-gray-700 block"><i class="fa-solid fa-map-pin"></i> Deliver To:</span>
+                            <span>${order.customerName} - ${order.customerPhone}</span>
+                            <p class="truncate text-[10px]">${order.customerAddress}</p>
+                        </div>
+
+                        <!-- Render dynamic cancellation mechanics -->
+                        ${cancelBtnHTML}
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+
+        // Interface utilities
+        function displayToast(msg) {
+            const toast = document.getElementById('toast');
+            const text = document.getElementById('toastMessage');
+            text.innerText = msg;
+            
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 3500);
+        }
+
+        // Theme control switcher
+        function toggleDayNightMode() {
+            const body = document.body;
+            const icon = document.getElementById('theme-icon');
+            const isWhiteTheme = body.classList.contains('bg-gray-100');
+
+            if (isWhiteTheme) {
+                body.classList.replace('bg-gray-100', 'bg-neutral-950');
+                body.classList.replace('text-gray-900', 'text-white');
+                icon.classList.replace('fa-moon', 'fa-sun');
+                displayToast("Dark mode activated.");
+            } else {
+                body.classList.replace('bg-neutral-950', 'bg-gray-100');
+                body.classList.replace('text-white', 'text-gray-900');
+                icon.classList.replace('fa-sun', 'fa-moon');
+                displayToast("Light mode activated.");
+            }
+        }
+    </script>
+</body>
+</html>
